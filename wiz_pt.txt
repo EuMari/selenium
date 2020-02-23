@@ -1,0 +1,35 @@
+ID: 02-2020-001
+Projekt: wizzair
+Tytul: rejestracja nowego uzytkownika na stronie wizzair.com 
+Wykonano: xyz
+Data opisania:
+Data wykonania:
+
+Przypadek
+Wpisz niepoprawny adres email podczas rejestracji
+
+Warunki wstępne:
+zaistalowana Przeglądarka google Chrome w wersji xxx lub nowszej
+otwarta strona https://wizzair.com/pl-pl#/
+
+Wykonanie
+1. kliknij 'zaloguj sie'
+2. kliknij 'zarejestruj sie'
+3. podaj imie
+4. podaj nazwisko
+5. wybierz plec
+6. podaj kod kraju
+7. podaj numer telefonu
+8. podaj adres email pomijajac znak '@'
+9. podaj haslo
+10. podaj obywatelstwo
+11. zaznacz obowiazkowa zgode
+12. kliknij 'zarejestruj sie'
+
+Oczekiwany rezultat
+Rejestracja nieudana
+blad o niepoprawnym adresie email
+
+Rzeczywisty rezultat
+
+Status
