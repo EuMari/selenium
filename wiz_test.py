@@ -13,6 +13,10 @@ gender='female'
 #gender='male'
 kod_kraju='PL'
 numer_tel='908777657'
+zly_mail='hjsija.pl'
+haslo='jhdoaoij7987'
+kraj='Polska'
+
 
 class WizzRegistration(unittest.TestCase):
     def setUp(self):
@@ -67,7 +71,30 @@ class WizzRegistration(unittest.TestCase):
 
         phone=driver.find_element_by_name('phoneNumberValidDigits')
         phone.send_keys(numer_tel)
-        sleep(3)
+
+        email_input=driver.find_element_by_name('email')
+        email_input.send_keys(zly_mail)
+
+
+        passwd_input=driver.find_element_by_name('password')
+        passwd_input.send_keys(haslo)
+
+        nation=driver.find_element_by_name('country-select')
+        nation.click()
+        #sleep(4)
+        nation_list=driver.find_element_by_xpath("//div[@class='register-form__country-container__locations']")
+        nation_names=nation_list.find_elements_by_tag_name("label")
+        #sleep(90)
+        for label in nation_names:
+            option=label.find_element_by_tag_name('strong')
+            if option.get_attribute("innerText") == kraj:
+                option.location_once_scrolled_into_view
+                option.click()
+                break
+
+        driver.find_element_by_xpath("//label[@for='registration-privacy-policy-checkbox'][@class='rf-checkbox__label']").click()
+
+        driver.find_element_by_xpath("//button[@data-test='booking-register-submit']").click()
 
 if __name__=='__main__':
     unittest.main(verbosity=2)
